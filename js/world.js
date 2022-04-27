@@ -24,7 +24,7 @@ var BootScene = new Phaser.Class({
         this.load.image("dragonorrange", "assets/dragonorrange.png");
         
         // our two characters
-        this.load.image('player', 'assets/AlphonsoTheBoy.png');
+        this.load.spritesheet('player', 'assets/AlphonsoTheBoy.png'{ frameWidth: 16, frameHeight: 16 });
     },
 
     create: function ()
