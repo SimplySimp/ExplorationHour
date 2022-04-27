@@ -24,7 +24,7 @@ var BootScene = new Phaser.Class({
         this.load.image("dragonorrange", "assets/dragonorrange.png");
         
         // our two characters
-        this.load.spritesheet('player', 'assets/AlphonsoTheBoy.png');
+        this.load.spritesheet('player', 'assets/RPG_assets.png', { frameWidth: 16, frameHeight: 16 });
     },
 
     create: function ()
@@ -131,16 +131,18 @@ var WorldScene = new Phaser.Class({
         this.cursors.up.reset();
         this.cursors.down.reset();
     },
-       onMeetEnemy: function(player, zone) {        
+    onMeetEnemy: function(player, zone) {        
         // we move the zone to some other location
         zone.x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
         zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
         
         // shake the world
-        this.cameras.main.shake(300);
+        this.cameras.main.shake(100);
         
+        this.input.stopPropagation();
         // start battle 
-		this.scene.start('BattleScene');
+
+        this.scene.switch('BattleScene');                
     },
     update: function (time, delta)
     {             
