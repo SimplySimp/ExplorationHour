@@ -138,10 +138,9 @@ var WorldScene = new Phaser.Class({
         
         // shake the world
         this.cameras.main.shake(300);
-        
+        this.cameras.main.fade(700, 0, 0, false);
         this.input.stopPropagation();
         // start battle 
-		this.cameras.main.fade(700, 0, 0, false);
         this.scene.switch('BattleScene');                
     },
     update: function (time, delta)
