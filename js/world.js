@@ -130,6 +130,10 @@ var WorldScene = new Phaser.Class({
         this.cursors.right.reset();
         this.cursors.up.reset();
         this.cursors.down.reset();
+		
+		this.cameras.main.fade(500);
+        
+        this.input.stopPropagation();
     },
     onMeetEnemy: function(player, zone) {        
         // we move the zone to some other location
