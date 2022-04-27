@@ -133,11 +133,12 @@ var WorldScene = new Phaser.Class({
     },
     onMeetEnemy: function(player, zone) {        
         // we move the zone to some other location
-        zone.x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
-        zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
 		this.cameras.main.fade(700, 0, 0, false);
 		
-		this.input.stopPropagation(); 
+		this.input.stopPropagation();
+        zone.x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
+        zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
+		 
         
         // shake the world
         this.cameras.main.shake(300);
