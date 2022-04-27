@@ -133,12 +133,13 @@ var WorldScene = new Phaser.Class({
     },
     onMeetEnemy: function(player, zone) {        
         // we move the zone to some other location
+		this.cameras.main.fade(700, 0, 0, false);
         zone.x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
         zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
         
         // shake the world
         this.cameras.main.shake(300);
-        this.cameras.main.fade(700, 0, 0, false);
+      
         this.input.stopPropagation();
         // start battle 
         this.scene.switch('BattleScene');                
