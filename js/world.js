@@ -137,7 +137,7 @@ var WorldScene = new Phaser.Class({
         zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
         
         // fade the world
-        this.cameras.main.fade(700, 0, 0, false);
+        this.cameras.main.fade(700);
 		
         // start battle 		
         this.scene.switch('BattleScene');
