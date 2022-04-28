@@ -346,9 +346,9 @@ var UIScene = new Phaser.Class({
         // basic container to hold all menus
         this.menus = this.add.container();
                 
-        this.heroesMenu = new HeroesMenu(195, 153, this);           
+        this.heroesMenu = new HeroesMenu(8, 153, this);           
         this.actionsMenu = new ActionsMenu(100, 153, this);            
-        this.enemiesMenu = new EnemiesMenu(8, 120, this);   
+        this.enemiesMenu = new EnemiesMenu(195, 153, this);   
         
         // the currently selected menu 
         this.currentMenu = this.actionsMenu;
