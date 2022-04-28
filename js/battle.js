@@ -155,6 +155,7 @@ var Enemy = new Phaser.Class({
     initialize:
     function Enemy(scene, x, y, texture, frame, type, hp, damage) {
         Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
+		this.flipX = true;
     }
 });
 
@@ -165,7 +166,7 @@ var PlayerCharacter = new Phaser.Class({
     function PlayerCharacter(scene, x, y, texture, frame, type, hp, damage) {
         Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
         // flip the image so I don"t have to edit it manually
-        this.flipX = true;
+        this.flipX = false;
         
         this.setScale(2);
     }
