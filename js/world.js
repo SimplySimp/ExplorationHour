@@ -89,7 +89,7 @@ var WorldScene = new Phaser.Class({
         });
         this.anims.create({
             key: 'down',
-            frames: this.anims.generateFrameNumbers('player', { frames: [ 0, 3, 0, 6] }),
+            frames: this.anims.generateFrameNumbers('player', { frames: [ 0, 2, 0, 5] }),
             frameRate: 10,
             repeat: -1
         });        
