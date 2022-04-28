@@ -18,17 +18,17 @@ var BattleScene = new Phaser.Class({
     },
     startBattle: function() {
         // player character - warrior
-        var warrior = new PlayerCharacter(this, 50, 50, "player", 1, "Warrior", 30, 20);        
+        var warrior = new PlayerCharacter(this, 50, 50, "player", 1, "Warrior", 50, 15);        
         this.add.existing(warrior);
         
         // player character - mage
-        var mage = new PlayerCharacter(this, 50, 100, "player", 4, "Mage", 30, 8);
+        var mage = new PlayerCharacter(this, 50, 100, "player", 4, "Mage", 50, 20);
         this.add.existing(mage);            
         
-        var dragonblue = new Enemy(this, 250, 50, "dragonblue", null, "Dragon", 50, 30);
+        var dragonblue = new Enemy(this, 250, 50, "dragonblue", null, "Dragon", 50, 15);
         this.add.existing(dragonblue);
         
-        var dragonOrange = new Enemy(this, 250, 100, "dragonorrange", null,"Dragon2", 50, 30);
+        var dragonOrange = new Enemy(this, 250, 100, "dragonorrange", null,"Dragon2", 50, 20);
         this.add.existing(dragonOrange);
         
         // array with heroes
@@ -165,7 +165,6 @@ var PlayerCharacter = new Phaser.Class({
     initialize:
     function PlayerCharacter(scene, x, y, texture, frame, type, hp, damage) {
         Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
-        // flip the image so I don"t have to edit it manually
         this.flipX = false;
         
         this.setScale(2);
