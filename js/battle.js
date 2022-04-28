@@ -18,17 +18,17 @@ var BattleScene = new Phaser.Class({
     },
     startBattle: function() {
         // player character - warrior
-        var warrior = new PlayerCharacter(this, 250, 50, "player", 1, "Warrior", 100, 20);        
+        var warrior = new PlayerCharacter(this, 50, 50, "player", 1, "Warrior", 100, 20);        
         this.add.existing(warrior);
         
         // player character - mage
-        var mage = new PlayerCharacter(this, 250, 100, "player", 4, "Mage", 80, 8);
+        var mage = new PlayerCharacter(this, 50, 100, "player", 4, "Mage", 80, 8);
         this.add.existing(mage);            
         
-        var dragonblue = new Enemy(this, 50, 50, "dragonblue", null, "Dragon", 50, 3);
+        var dragonblue = new Enemy(this, 250, 50, "dragonblue", null, "Dragon", 50, 3);
         this.add.existing(dragonblue);
         
-        var dragonOrange = new Enemy(this, 50, 100, "dragonorrange", null,"Dragon2", 50, 3);
+        var dragonOrange = new Enemy(this, 250, 100, "dragonorrange", null,"Dragon2", 50, 3);
         this.add.existing(dragonOrange);
         
         // array with heroes
@@ -93,7 +93,7 @@ var BattleScene = new Phaser.Class({
         if(action == "attack") {            
             this.units[this.index].attack(this.enemies[target]);              
         }
-        // next turn in 3 seconds
+        // next turn in 3 seconds.
         this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });        
     },    
     endBattle: function() {       
@@ -155,6 +155,7 @@ var Enemy = new Phaser.Class({
     initialize:
     function Enemy(scene, x, y, texture, frame, type, hp, damage) {
         Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
+		this.flipX = true;
     }
 });
 
@@ -165,7 +166,7 @@ var PlayerCharacter = new Phaser.Class({
     function PlayerCharacter(scene, x, y, texture, frame, type, hp, damage) {
         Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
         // flip the image so I don"t have to edit it manually
-        this.flipX = true;
+        this.flipX = false;
         
         this.setScale(2);
     }
@@ -346,9 +347,9 @@ var UIScene = new Phaser.Class({
         // basic container to hold all menus
         this.menus = this.add.container();
                 
-        this.heroesMenu = new HeroesMenu(195, 153, this);           
+        this.heroesMenu = new HeroesMenu(8, 153, this);           
         this.actionsMenu = new ActionsMenu(100, 153, this);            
-        this.enemiesMenu = new EnemiesMenu(8, 153, this);   
+        this.enemiesMenu = new EnemiesMenu(195, 153, this);   
         
         // the currently selected menu 
         this.currentMenu = this.actionsMenu;
