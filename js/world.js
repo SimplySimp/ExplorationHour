@@ -69,7 +69,7 @@ var WorldScene = new Phaser.Class({
         //  animation with key 'left', we don't need left and right as we will use one and flip the sprite
         this.anims.create({
             key: 'left',
-            frames: this.anims.generateFrameNumbers('player', { frames: [1, 4, 1, 7]}),
+            frames: this.anims.generateFrameNumbers('player', { frames: [1, 5, 1, 7]}),
             frameRate: 10,
             repeat: -1
         });
@@ -77,7 +77,7 @@ var WorldScene = new Phaser.Class({
         // animation with key 'right'
         this.anims.create({
             key: 'right',
-            frames: this.anims.generateFrameNumbers('player', { frames: [1, 4, 1, 7] }),
+            frames: this.anims.generateFrameNumbers('player', { frames: [1, 5, 1, 7] }),
             frameRate: 10,
             repeat: -1
         });
@@ -89,7 +89,7 @@ var WorldScene = new Phaser.Class({
         });
         this.anims.create({
             key: 'down',
-            frames: this.anims.generateFrameNumbers('player', { frames: [ 0, 3, 0, 6] }),
+            frames: this.anims.generateFrameNumbers('player', { frames: [ 0, 2, 0, 6] }),
             frameRate: 10,
             repeat: -1
         });        
