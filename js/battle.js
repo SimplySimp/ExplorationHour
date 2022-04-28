@@ -93,7 +93,7 @@ var BattleScene = new Phaser.Class({
         if(action == "attack") {            
             this.units[this.index].attack(this.enemies[target]);              
         }
-        // next turn in 3 seconds
+        // next turn in 3 seconds.
         this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });        
     },    
     endBattle: function() {       
@@ -348,7 +348,7 @@ var UIScene = new Phaser.Class({
                 
         this.heroesMenu = new HeroesMenu(195, 153, this);           
         this.actionsMenu = new ActionsMenu(100, 153, this);            
-        this.enemiesMenu = new EnemiesMenu(8, 153, this);   
+        this.enemiesMenu = new EnemiesMenu(8, 120, this);   
         
         // the currently selected menu 
         this.currentMenu = this.actionsMenu;
