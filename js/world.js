@@ -121,10 +121,7 @@ var WorldScene = new Phaser.Class({
             this.spawns.create(x, y, 20, 20);            
         }        
         // add collider
-		
-        if (this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this)) {
-		  this.cameras.main.shake(100);
-		}
+        this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this);
         // we listen for 'wake' event
         this.sys.events.on('wake', this.wake, this);
     },
@@ -135,14 +132,15 @@ var WorldScene = new Phaser.Class({
         this.cursors.down.reset();
 		
     },
-    onMeetEnemy: function(player, zone) {        
+     onMeetEnemy: function(player, zone) {        
         // we move the zone to some other location
         zone.x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
         zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
         
         // shake the world
-   
+        this.cameras.main.shake(300);
         
+        this.input.stopPropagation();
         // start battle 
         this.scene.switch('BattleScene');                
     },
