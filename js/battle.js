@@ -92,7 +92,7 @@ var BattleScene = new Phaser.Class({
     receivePlayerSelection: function(action, target) {
         if(action == "attack") {            
             this.units[this.index].attack(this.enemies[target]);              
-        }else if (action == "run away") {
+        }else if (action == "Run Away") {
 		this.scene.switch('WorldScene')}
         // next turn in 3 seconds.
         this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });        
