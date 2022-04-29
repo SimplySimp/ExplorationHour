@@ -296,6 +296,7 @@ var ActionsMenu = new Phaser.Class({
     function ActionsMenu(x, y, scene) {
         Menu.call(this, x, y, scene);   
         this.addMenuItem("Attack");
+		this.addMenuItem("Run Away");
     },
     confirm: function() { 
         // we select an action and go to the next menu and choose from the enemies to apply the action
