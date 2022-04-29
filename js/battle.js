@@ -138,6 +138,10 @@ var Unit = new Phaser.Class({
             this.scene.events.emit("Message", this.type + " attacks " + target.type + " for " + this.damage + " damage");
         }
     },    
+	runAway: function(target) {
+		this.scene.switch('WorldScene');
+	    },   
+	
     takeDamage: function(damage) {
         this.hp -= damage;
         if(this.hp <= 0) {
@@ -369,7 +373,7 @@ var UIScene = new Phaser.Class({
         this.battleScene.events.on("PlayerSelect", this.onPlayerSelect, this);
         
         // when the action on the menu is selected
-        // for now we have only one action so we dont send and action id
+        // for now we have only one action so we dont send an action id
         this.events.on("SelectedAction", this.onSelectedAction, this);
         
         // an enemy is selected
