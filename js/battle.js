@@ -94,7 +94,8 @@ var BattleScene = new Phaser.Class({
             this.units[this.index].attack(this.enemies[target]);              
         }else if (action == "Run Away") {
 		this.scene.switch('WorldScene')
-		endBattle()}
+		this.scene.sleep('UIScene');
+		}
         // next turn in 3 seconds.
         this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });        
     },    
