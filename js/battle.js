@@ -22,16 +22,8 @@ var BattleScene = new Phaser.Class({
         this.add.existing(warrior);
         
         // player character - mage
-<<<<<<< HEAD
         var mage = new PlayerCharacter(this, 50, 100, "Second", 4, "Mage", 50, 20);
-=======
-<<<<<<< HEAD
-        var mage = new PlayerCharacter(this, 50, 100, "player", 4, "Mage", 50, 15);
-=======
-        var mage = new PlayerCharacter(this, 50, 100, "mage", 4, "Mage", 50, 20);
->>>>>>> 259de65a842c54256ddbc39ac1129819745e92af
->>>>>>> efe2d83def5ee8d127daa10f1ff4a2a25c9e8cd6
-        this.add.existing(mage);            
+        this.add.existing(mage);   
         
         var dragonblue = new Enemy(this, 250, 50, "dragonblue", null, "Dragon", 50, 15);
         this.add.existing(dragonblue);
