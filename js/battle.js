@@ -137,10 +137,7 @@ var Unit = new Phaser.Class({
             target.takeDamage(this.damage);
             this.scene.events.emit("Message", this.type + " attacks " + target.type + " for " + this.damage + " damage");
         }
-    },    
-	runAway: function(target) {
-		this.scene.switch('WorldScene');
-	    },   
+    },       
 	
     takeDamage: function(damage) {
         this.hp -= damage;
@@ -403,6 +400,7 @@ var UIScene = new Phaser.Class({
         this.enemiesMenu.deselect();
         this.currentMenu = null;
         this.battleScene.receivePlayerSelection("attack", index);   
+		this.battleScene.receivePlayerSelection("Run Away", index); 
     },
     onPlayerSelect: function(id) {
         // when its player turn, we select the active hero item and the first action
