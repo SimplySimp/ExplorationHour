@@ -67,7 +67,7 @@ var BattleScene = new Phaser.Class({
                 r = Math.floor(Math.random() * this.heroes.length);
             } while(!this.heroes[r].living) 
             // call the enemy's attack function 
-            this.units[this.index].Attack(this.heroes[r]);  
+            this.units[this.index].attack(this.heroes[r]);  
             // add timer for the next turn, so will have smooth gameplay
             this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });
         }
@@ -90,14 +90,14 @@ var BattleScene = new Phaser.Class({
     },
     // when the player have selected the enemy to be attacked
     receivePlayerSelection: function(action, target) {
-        if(action == "Attack") {            
+        if(action == "attack") {            
             this.units[this.index].attack(this.enemies[target]);              
         }else if (action == "Run Away") {
 		this.scene.switch('WorldScene')
 		this.scene.sleep('UIScene');
 		}
         // next turn in 3 seconds.
-        this.time.addEvent({ delay: 1000, callback: this.nextTurn, callbackScope: this });        
+        this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });        
     },    
     endBattle: function() {       
         // clear state, remove sprites
@@ -134,10 +134,10 @@ var Unit = new Phaser.Class({
         this.menuItem = item;
     },
     // attack the target unit
-    Attack: function(target) {
+    attack: function(target) {
         if(target.living) {
             target.takeDamage(this.damage);
-            this.scene.events.emit("Message", this.type + " Attacks " + target.type + " for " + this.damage + " damage");
+            this.scene.events.emit("Message", this.type + " attacks " + target.type + " for " + this.damage + " damage");
         }
     },       
 	
@@ -401,7 +401,7 @@ var UIScene = new Phaser.Class({
         this.actionsMenu.deselect();
         this.enemiesMenu.deselect();
         this.currentMenu = null;
-        this.battleScene.receivePlayerSelection("Attack", index);   
+        this.battleScene.receivePlayerSelection("attack", index);   
 		this.battleScene.receivePlayerSelection("Run Away", index); 
     },
     onPlayerSelect: function(id) {
