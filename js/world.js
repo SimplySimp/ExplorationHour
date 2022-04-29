@@ -139,13 +139,12 @@ var WorldScene = new Phaser.Class({
         zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
         
         // shake the world
-		if (this.physics.overlap(player, zone)){
-        this.cameras.main.fade(500, 0, 0, 0, false); 
+        this.cameras.main.shake(300); 
 		
         this.input.stopPropagation();
         // start battle 
         this.scene.switch('BattleScene');
-	}    		
+   		
     },
     update: function (time, delta)
     {             
