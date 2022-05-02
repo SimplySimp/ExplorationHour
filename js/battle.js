@@ -25,8 +25,8 @@ var BattleScene = new Phaser.Class({
         var mage = new PlayerCharacter(this, 50, 100, "Second", 1, "Jekk", 50, 20);
         this.add.existing(mage);   
         
-        var Pirate1 = new Enemy(this, 250, 50, "Pirate1", null, "Pirate1", 50, 15);
-        this.add.existing(Pirate1);
+        var dragonblue = new Enemy(this, 250, 50, "dragonblue", null, "dragon1", 50, 15);
+        this.add.existing(dragonblue);
         
         var dragonOrange = new Enemy(this, 250, 100, "dragonorrange", null,"Dragon2", 50, 20);
         this.add.existing(dragonOrange);
@@ -34,7 +34,7 @@ var BattleScene = new Phaser.Class({
         // array with heroes
         this.heroes = [ warrior, mage ];
         // array with enemies
-        this.enemies = [ Pirate1, dragonOrange ];
+        this.enemies = [ dragonblue, dragonOrange ];
         // array with both parties, who will attack
         this.units = this.heroes.concat(this.enemies);
         
