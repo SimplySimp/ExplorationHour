@@ -144,7 +144,7 @@ var WorldScene = new Phaser.Class({
         this.input.stopPropagation();
         // start battle 
         this.scene.switch('BattleScene'); 
-	})   
+	)   
        
 	},
     update: function (time, delta)
