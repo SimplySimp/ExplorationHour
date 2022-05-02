@@ -384,7 +384,7 @@ var UIScene = new Phaser.Class({
         // the message describing the current action
         this.message = new Message(this, this.battleScene.events);
         this.add.existing(this.message);        
-        
+         
         this.createMenu();     
     },
     createMenu: function() {
