@@ -139,12 +139,11 @@ var WorldScene = new Phaser.Class({
         zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
         
         // shake the world
-        this.cameras.main.shake(300); 
-		
-        this.input.stopPropagation();
-        // start battle 
-        this.scene.switch('BattleScene');
-   		
+        this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
+		this.scene.start('BattleScene')
+	})
+       
+       
     },
     update: function (time, delta)
     {             
