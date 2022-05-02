@@ -139,8 +139,8 @@ var WorldScene = new Phaser.Class({
         zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
         
         this.cameras.main.fadeIn(500, 0, 0, 0)
-	    this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
-		this.time.delayedCall(5000, () => {
+	    this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_IN_COMPLETE, (cam, effect) => {
+		this.time.delayedCall(500, () => {
 			this.scene.start('BattleScene')
 		})
 	})   
