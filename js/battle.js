@@ -93,8 +93,8 @@ var BattleScene = new Phaser.Class({
         if(action == "attack") {            
             this.units[this.index].attack(this.enemies[target]);              
         }else if (action == "Run Away") {
-		this.scene.switch('WorldScene')
-		this.scene.sleep('UIScene');
+			this.scene.switch('WorldScene')
+			this.scene.sleep('UIScene');
 		}
         // next turn in 3 seconds.
         this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });        
@@ -402,7 +402,7 @@ var UIScene = new Phaser.Class({
         this.enemiesMenu.deselect();
         this.currentMenu = null;
         this.battleScene.receivePlayerSelection("attack", index);   
-		this.battleScene.receivePlayerSelection("Run Away", index); 
+		
     },
     onPlayerSelect: function(id) {
         // when its player turn, we select the active hero item and the first action
