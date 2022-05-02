@@ -10,6 +10,8 @@ var BattleScene = new Phaser.Class({
     },
     create: function ()
     {    
+        // change the background to green	
+		this.load.tilemapTiledJSON('map', 'assets/map/map.json');
         this.startBattle();
         // on wake event we call startBattle too
         this.sys.events.on('wake', this.startBattle, this);             
