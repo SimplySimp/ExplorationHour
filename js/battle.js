@@ -384,7 +384,7 @@ var UIScene = new Phaser.Class({
         // the message describing the current action
         this.message = new Message(this, this.battleScene.events);
         this.add.existing(this.message);        
-        
+         
         this.createMenu();     
     },
     createMenu: function() {
@@ -433,7 +433,7 @@ var UIScene = new Phaser.Class({
                 this.currentMenu.moveSelectionDown();
             } else if(event.code === "ArrowLeft" || event.code === "Shift") {
 
-            } else if(event.code === "Space" || event.code === "ArrowRight") {
+            } else if(event.code === "Space") {
                 this.currentMenu.confirm();
             } 
         }
