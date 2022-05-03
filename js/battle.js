@@ -16,10 +16,11 @@ var BattleScene = new Phaser.Class({
         // on wake event we call startBattle too
         this.sys.events.on('wake', this.startBattle, this);             
     },
-	 var DamageValue = Phaser.Math.Between(10, 20);
+	
     startBattle: function() {
+		var DamageValue = Phaser.Math.Between(10, 20);
         // player character - warrior
-        var warrior = new PlayerCharacter(this, 50, 50, "player", 3, "Alphonso", 50,DamageValue);        
+        var warrior = new PlayerCharacter(this, 50, 50, "player", 3, "Alphonso", 50, DamageValue);        
         this.add.existing(warrior);
         
         // player character - mage
