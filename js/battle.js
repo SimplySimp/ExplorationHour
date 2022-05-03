@@ -92,9 +92,6 @@ var BattleScene = new Phaser.Class({
     receivePlayerSelection: function(action, target) {
         if(action == "attack") {            
             this.units[this.index].attack(this.enemies[target]);              
-        }else if (action == "Run Away") {
-			this.scene.switch('WorldScene')
-			this.scene.sleep('UIScene');
 		}
         // next turn in 3 seconds.
         this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });        
@@ -147,7 +144,7 @@ var Unit = new Phaser.Class({
             this.hp = 0;
             this.menuItem.unitKilled();
             this.living = false;
-            this.visible = false;   
+            this.visible = false;
             this.menuItem = null;
         }
     }    
@@ -300,7 +297,6 @@ var ActionsMenu = new Phaser.Class({
     function ActionsMenu(x, y, scene) {
         Menu.call(this, x, y, scene);   
         this.addMenuItem("Attack");
-		this.addMenuItem("Run Away");
     },
     confirm: function() { 
         // we select an action and go to the next menu and choose from the enemies to apply the action
