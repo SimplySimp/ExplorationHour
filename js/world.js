@@ -123,6 +123,12 @@ var WorldScene = new Phaser.Class({
         }        
         // add collider
         this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this);
+		if (this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this){
+			
+			this.cameras.main.fadeOut(700);
+			this.input.stopPropagation(); 
+			this.scene.switch('BattleScene');
+		}
         // we listen for 'wake' event
         this.sys.events.on('wake', this.wake, this);
     },
@@ -142,6 +148,7 @@ var WorldScene = new Phaser.Class({
         this.cameras.main.fadeIn(1100);
         
         this.input.stopPropagation();
+		
         // start battle 
         this.scene.switch('BattleScene');        
 	},
@@ -194,4 +201,3 @@ var WorldScene = new Phaser.Class({
     }
     
 });
-
