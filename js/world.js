@@ -20,8 +20,8 @@ var BootScene = new Phaser.Class({
         this.load.tilemapTiledJSON('map', 'assets/map/map.json');
         
         // enemies
-        this.load.image("dragonblue", "assets/dragonblue.png");
-        this.load.image("dragonorrange", "assets/dragonorrange.png");
+        this.load.image("ColdBeardPirate1", "assets/ColdBeardPirate1.png");
+        this.load.image("ColdBeardPirate2", "assets/ColdBeardPirate2.png");
         
         // our two characters
         this.load.spritesheet('player', 'assets/AlphonsoTheLong.png', { frameWidth: 13, frameHeight: 15 });
@@ -123,6 +123,7 @@ var WorldScene = new Phaser.Class({
         }        
         // add collider
         this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this);
+		
         // we listen for 'wake' event
         this.sys.events.on('wake', this.wake, this);
     },
@@ -139,9 +140,10 @@ var WorldScene = new Phaser.Class({
         zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
         
         // shake the world
-        this.cameras.main.fade(300);
+        this.cameras.main.fadeIn(1100);
         
         this.input.stopPropagation();
+		
         // start battle 
         this.scene.switch('BattleScene');        
 	},
@@ -194,4 +196,3 @@ var WorldScene = new Phaser.Class({
     }
     
 });
-
