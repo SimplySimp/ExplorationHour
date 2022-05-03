@@ -21,7 +21,7 @@ var BootScene = new Phaser.Class({
         
         // enemies
         this.load.image("ColdBeardPirate1", "assets/ColdBeardPirate1.png");
-        this.load.image("dragonorrange", "assets/dragonorrange.png");
+        this.load.image("ColdBeardPirate2", "assets/ColdBeardPirate2.png");
         
         // our two characters
         this.load.spritesheet('player', 'assets/AlphonsoTheLong.png', { frameWidth: 13, frameHeight: 15 });
