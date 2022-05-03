@@ -33,7 +33,7 @@ var BattleScene = new Phaser.Class({
         // array with heroes
         this.heroes = [ warrior, mage ];
         // array with enemies
-        this.enemies = [ ColdBeardPirate1, ColdBeardPirate2 ];
+        this.enemies = [ ColdBeardPirate1];
         // array with both parties, who will attack
         this.units = this.heroes.concat(this.enemies);
         
