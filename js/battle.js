@@ -16,7 +16,8 @@ var BattleScene = new Phaser.Class({
         // on wake event we call startBattle too
         this.sys.events.on('wake', this.startBattle, this);             
     },
-	randomDamage: funtion() {
+	function randomDamage()
+	{
 		var damage = Phaser.Math.Between(10, 20)
 		return damage;
 	},
