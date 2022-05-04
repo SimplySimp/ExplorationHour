@@ -27,15 +27,15 @@ var BattleScene = new Phaser.Class({
         var mage = new PlayerCharacter(this, 50, 100, "Second", 1, "Jekk", 50, 20);
         this.add.existing(mage);   
         
-        var ColdBeardPirate1 = new Enemy(this, 250, 75, "ColdBeardPirate1", null, "Pirate 1", 50, 15);
-        this.add.existing(ColdBeardPirate1);
+        var Wolf1 = new Enemy(this, 250, 75, "Wolf1", null, "Wolf 1", 50, 15);
+        this.add.existing(Wolf1);
         
        
         
         // array with heroes
         this.heroes = [ warrior, mage ];
         // array with enemies
-        this.enemies = [ ColdBeardPirate1];
+        this.enemies = [ Wolf1];
         // array with both parties, who will attack
         this.units = this.heroes.concat(this.enemies);
         

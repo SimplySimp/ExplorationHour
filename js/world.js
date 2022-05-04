@@ -20,7 +20,7 @@ var BootScene = new Phaser.Class({
         this.load.tilemapTiledJSON('map', 'assets/map/map.json');
         
         // enemies
-        this.load.image("ColdBeardPirate1", "assets/ColdBeardPirate1.png");
+        this.load.image("Wolf1", "assets/Wolf1.png");
         this.load.image("ColdBeardPirate2", "assets/ColdBeardPirate2.png");
         
         // our two characters
