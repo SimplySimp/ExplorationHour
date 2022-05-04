@@ -18,9 +18,9 @@ var BattleScene = new Phaser.Class({
     },
 	
     startBattle: function() {
-		var DamageValue = Phaser.Math.Between(10, 20);
+
         // player character - warrior
-        var warrior = new PlayerCharacter(this, 50, 50, "player", 3, "Alphonso", 50, DamageValue);        
+        var warrior = new PlayerCharacter(this, 50, 50, "player", 3, "Alphonso", 50, Phaser.Math.Between(10, 20));        
         this.add.existing(warrior);
         
         // player character - mage
