@@ -14,7 +14,7 @@ var BootScene = new Phaser.Class({
     preload: function ()
     {
         // map tiles
-        this.load.image('tiles', 'assets/map/Tileset.png');
+        this.load.image('tiles', 'assets/map/Tileset.png,Strawbale1.png,Strawbale2.png,TrainingDummy1.png,TrainingDummy2.png');
         
         // map in json format
         this.load.tilemapTiledJSON('NewMap', 'assets/map/NewMap.json');
