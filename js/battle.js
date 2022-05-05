@@ -21,7 +21,7 @@ var BattleScene = new Phaser.Class({
     startBattle: function() {
 
         // player character - warrior
-        var warrior = new PlayerCharacter(this, 50, 50, "player", 3, "Alphonso", 50, damage);        
+        var warrior = new PlayerCharacter(this, 50, 50, "player", 3, "Alphonso", 50, 0);        
         this.add.existing(warrior);
         
         // player character - mage
