@@ -57,14 +57,14 @@ var WorldScene = new Phaser.Class({
         var map = this.make.tilemap({ key: 'NewMap' });
         
         // first parameter is the name of the tilemap in tiled
-        var tiles = map.addTilesetImage('RPGNatureTileset', 'tiles');
+        var tiles = map.addTilesetImage('Tileset', 'tiles');
         
         // creating the layers
-        var grass = map.createStaticLayer('Grass', tiles, 0, 0);
-        var obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
+        var grass = map.createStaticLayer('bottom', tiles, 0, 0);
+        var top = map.createStaticLayer('top', tiles, 0, 0);
         
         // make all tiles in obstacles collidable
-        obstacles.setCollisionByExclusion([-1]);
+        top.setCollisionByExclusion([-1]);
         
         //  animation with key 'left', we don't need left and right as we will use one and flip the sprite
         this.anims.create({
