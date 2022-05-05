@@ -54,14 +54,14 @@ var WorldScene = new Phaser.Class({
     create: function ()
     {
         // create the map
-        var map = this.make.tilemap({ key: 'NewMap' });
+        const map = this.make.tilemap({ key: 'NewMap' });
         
         // first parameter is the name of the tilemap in tiled
-        var tiles = map.addTilesetImage('Tileset', 'tiles');
+        const tiles = map.addTilesetImage('Tileset', 'tiles');
         
         // creating the layers
-        var bot = map.createStaticLayer('bot', tiles, 0, 0);
-        var top = map.createStaticLayer('top', tiles, 0, 0);
+        const bot = map.createStaticLayer('bot', tiles, 0, 0);
+        const top = map.createStaticLayer('top', tiles, 0, 0);
         
         // make all tiles in obstacles collidable
         top.setCollisionByExclusion([-1]);
@@ -116,8 +116,8 @@ var WorldScene = new Phaser.Class({
         // where the enemies will be
         this.spawns = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
         for(var i = 0; i < 30; i++) {
-            var x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
-            var y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
+            const x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
+            const y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
             // parameters are x, y, width, height
             this.spawns.create(x, y, 20, 20);            
         }        
