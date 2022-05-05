@@ -21,7 +21,7 @@ var BattleScene = new Phaser.Class({
     startBattle: function() {
 
         // player character - warrior
-        var warrior = new PlayerCharacter(this, 50, 50, "player", 3, "Alphonso", 50, Phaser.Math.Between(10, 20));        
+        var warrior = new PlayerCharacter(this, 50, 50, "player", 3, "Alphonso", 50, 0);        
         this.add.existing(warrior);
         
         // player character - mage
@@ -124,7 +124,7 @@ var Unit = new Phaser.Class({
         Phaser.GameObjects.Sprite.call(this, scene, x, y, texture, frame)
         this.type = type;
         this.maxHp = this.hp = hp;
-        this.damage = damage; // default damage     
+        this.damage = Phaser.Math.Between(10, 20); // default damage     
         this.living = true;         
         this.menuItem = null;
     },
