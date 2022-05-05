@@ -62,6 +62,7 @@ var WorldScene = new Phaser.Class({
         // creating the layers
         const bot = map.createStaticLayer('bot', tiles, 0, 0);
         const top = map.createStaticLayer('top', tiles, 0, 0);
+        const Collision = map.createStaticLayer('Collision', tiles, 0, 0);
         
         // make all tiles in obstacles collidable
         top.setCollisionByExclusion([-1]);
