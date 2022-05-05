@@ -14,10 +14,10 @@ var BootScene = new Phaser.Class({
     preload: function ()
     {
         // map tiles
-        this.load.image('tiles', 'assets/map/spritesheet.png');
+        this.load.image('tiles', 'assets/map/Tileset.png');
         
         // map in json format
-        this.load.tilemapTiledJSON('map', 'assets/map/map.json');
+        this.load.tilemapTiledJSON('NewMap', 'assets/map/NewMap.json');
         
         // enemies
         this.load.image("Wolf1", "assets/Wolf1.png");
