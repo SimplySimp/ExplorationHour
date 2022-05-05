@@ -54,10 +54,10 @@ var WorldScene = new Phaser.Class({
     create: function ()
     {
         // create the map
-        var map = this.make.tilemap({ key: 'map' });
+        var map = this.make.tilemap({ key: 'NewMap' });
         
         // first parameter is the name of the tilemap in tiled
-        var tiles = map.addTilesetImage('spritesheet', 'tiles');
+        var tiles = map.addTilesetImage('RPGNatureTileset', 'tiles');
         
         // creating the layers
         var grass = map.createStaticLayer('Grass', tiles, 0, 0);
