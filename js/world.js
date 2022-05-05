@@ -61,7 +61,7 @@ var WorldScene = new Phaser.Class({
         const map = this.make.tilemap({ key: 'NewMap' });
         
         // first parameter is the name of the tilemap in tiled
-        const tiles = map.addTilesetImage('Tileset', 'tiles', 'straw1','straw2','dum1','dum2');
+        const tiles = map.addTilesetImage('NewMap', 'tiles', 'straw1','straw2','dum1','dum2');
         
         // creating the layers
         const bot = map.createStaticLayer('bot', tiles, 0, 0);
