@@ -25,7 +25,7 @@ var BootScene = new Phaser.Class({
         
         // our two characters
         this.load.spritesheet('player', 'assets/AlphonsoTheLong.png', { frameWidth: 13, frameHeight: 15 });
-		this.load.spritesheet('Second', 'assets/JekkTheFoxCatV3.png', { frameWidth: 30, frameHeight: 17 });
+		this.load.spritesheet('Second', 'assets/JekkTheFoxCatV4.png', { frameWidth: 30, frameHeight: 17 });
     },
 
     create: function ()
