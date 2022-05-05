@@ -60,7 +60,7 @@ var WorldScene = new Phaser.Class({
         var tiles = map.addTilesetImage('Tileset', 'tiles');
         
         // creating the layers
-        var grass = map.createStaticLayer('bottom', tiles, 0, 0);
+        var bot = map.createStaticLayer('bot', tiles, 0, 0);
         var top = map.createStaticLayer('top', tiles, 0, 0);
         
         // make all tiles in obstacles collidable
