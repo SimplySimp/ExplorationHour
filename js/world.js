@@ -14,7 +14,11 @@ var BootScene = new Phaser.Class({
     preload: function ()
     {
         // map tiles
-        this.load.image('tiles', 'assets/map/Tileset.png,Strawbale1.png,Strawbale2.png,TrainingDummy1.png,TrainingDummy2.png');
+        this.load.image('tiles', 'assets/map/Tileset.png');
+		this.load.image('straw1', 'assets/map/Strawbale1.png');
+		this.load.image('straw2', 'assets/map/Strawbale2.png');
+		this.load.image('dum1', 'assets/map/TrainingDummy1.png');
+		this.load.image('dum2', 'assets/map/TrainingDummy2.png');
         
         // map in json format
         this.load.tilemapTiledJSON('NewMap', 'assets/map/NewMap.json');
@@ -57,7 +61,7 @@ var WorldScene = new Phaser.Class({
         const map = this.make.tilemap({ key: 'NewMap' });
         
         // first parameter is the name of the tilemap in tiled
-        const tiles = map.addTilesetImage('Tileset', 'tiles');
+        const tiles = map.addTilesetImage('Tileset', 'tiles', 'straw1','straw2','dum1','dum2');
         
         // creating the layers
         const bot = map.createStaticLayer('bot', tiles, 0, 0);
