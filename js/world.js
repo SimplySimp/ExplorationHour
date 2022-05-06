@@ -1,4 +1,4 @@
-const BootScene = new Phaser.Class({
+var BootScene = new Phaser.Class({
 
     Extends: Phaser.Scene,
 
@@ -37,7 +37,7 @@ const BootScene = new Phaser.Class({
     }
 });
 
-const WorldScene = new Phaser.Class({
+var WorldScene = new Phaser.Class({
 
     Extends: Phaser.Scene,
 
