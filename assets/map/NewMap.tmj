@@ -3,7 +3,8 @@
     {
      "export":
         {
-         "format":"tmx"
+         "format":"tmx",
+         "target":"NewMap..tmx"
         }
     },
  "height":20,
