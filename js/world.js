@@ -1,5 +1,3 @@
-
-
 const BootScene = new Phaser.Class({
 
     Extends: Phaser.Scene,
@@ -70,7 +68,6 @@ const WorldScene = new Phaser.Class({
         // creating the layers
         var bot = map.createStaticLayer('bot', tiles, 0, 0);
         var top = map.createStaticLayer('top', tiles, straw1, straw2, dum1, dum2, 0, 0);
-        var Collision = map.createStaticLayer('Collision', tiles, 0, 0);
         
         // make all tiles in obstacles collidable
         top.setCollisionByExclusion([-1]);
