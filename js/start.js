@@ -1,16 +1,19 @@
-var config = {
-    type: Phaser.AUTO,
-    width: 700,
-    height: 468,
-    zoom: 2,
-    physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: { y: 0 },
-        }
-    },
-    scene: [
-        WorldScene,
-    ]
+const gameState = {
 };
-var game = new Phaser.Game(config);
+
+const config = {
+  type: Phaser.AUTO,
+  width: 450,
+  height: 500,
+  backgroundColor: "b9eaff",
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: -200 },
+      enableBody: true,
+    }
+  },
+  scene: [WorldScene]
+};
+ 
+const game = new Phaser.Game(config);
