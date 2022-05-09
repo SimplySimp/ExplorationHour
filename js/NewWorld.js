@@ -1,3 +1,20 @@
+const config = {
+  type: Phaser.AUTO,
+  width: 700,
+  height: 468,
+  backgroundColor: "b9eaff",
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 0 },
+      enableBody: true,
+    }
+  },
+  scene: [StartScene]
+};
+ 
+const game = new Phaser.Game(config);
+
 class StartScene extends Phaser.Scene {
 	constructor() {
 		super({ key: 'StartScene' })
@@ -21,10 +38,6 @@ class StartScene extends Phaser.Scene {
 	let bg=this.add.image(700,468, "NewMap");
 	gameState.player = this.physics.add.sprite(225, 44, "player", 6); 
 	
-	
-	
-	
-	
 	}
 	
 	update() {
@@ -32,10 +45,13 @@ class StartScene extends Phaser.Scene {
     gameState.player.setVelocityX(-100);
   } else if (gameState.cursors.right.isDown) {
     gameState.player.setVelocityX(100);
+  } else if (gameState.cursors.up.isDown) {
+    gameState.player.setVelocityY(100);
+  } else if (gameState.cursors.down.isDown) {
+    gameState.player.setVelocityY(-100);
   } else {
     gameState.player.setVelocityX(0);
   }
 
-	
 	}
 	
