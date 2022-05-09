@@ -4,7 +4,18 @@ class StartScene extends Phaser.Scene {
 	}
 
 	preload() {
-
+		//Assets & Backgorund
+		this.load.image('', 'assets/map/.png');
+        this.load.image('tiles', 'assets/map/Tileset.png');
+		this.load.image('straw1', 'assets/map/Strawbale1.png');
+		this.load.image('straw2', 'assets/map/Strawbale2.png');
+		this.load.image('dum1', 'assets/map/TrainingDummy1.png');
+		this.load.image('dum2', 'assets/map/TrainingDummy2.png');
+		//Enemy
+		this.load.image("Wolf1", "assets/Wolf1.png");
+		//Two Characters
+        this.load.spritesheet('player', 'assets/AlphonsoTheLong.png', { frameWidth: 13, frameHeight: 15 });
+		this.load.spritesheet('Second', 'assets/JekkTheFoxCatV4.png', { frameWidth: 30, frameHeight: 17 });
 	}
 	create() {
 
