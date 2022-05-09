@@ -19,7 +19,23 @@ class StartScene extends Phaser.Scene {
 	}
 	create() {
 	let bg=this.add.image(700,468, "NewMap");
-	gameState.player = this.physics.add.sprite(225, 44, "AlphonsoTheLong.png"); 
+	gameState.player = this.physics.add.sprite(225, 44, "player", 6); 
+	
+	
+	
+	
+	
+	}
+	
+	update() {
+	if (gameState.cursors.left.isDown) {
+    gameState.player.setVelocityX(-100);
+  } else if (gameState.cursors.right.isDown) {
+    gameState.player.setVelocityX(100);
+  } else {
+    gameState.player.setVelocityX(0);
+  }
+
 	
 	}
 	
