@@ -1,6 +1,4 @@
-
-
-const BootScene = new Phaser.Class({
+var BootScene = new Phaser.Class({
 
     Extends: Phaser.Scene,
 
@@ -39,7 +37,7 @@ const BootScene = new Phaser.Class({
     }
 });
 
-const WorldScene = new Phaser.Class({
+var WorldScene = new Phaser.Class({
 
     Extends: Phaser.Scene,
 
@@ -58,15 +56,18 @@ const WorldScene = new Phaser.Class({
     create: function ()
     {
         // create the map
-        const map = this.make.tilemap({ key: 'NewMap' });
+        var map = this.make.tilemap({ key: 'NewMap' });
         
         // first parameter is the name of the tilemap in tiled
-        const tiles = map.addTilesetImage('Terrain', 'tiles', 'straw1','straw2','dum1','dum2');
+		var tiles = map.addTilesetImage('tiles');
+		var straw1 = map.addTilesetImage('straw1');
+		var straw2 = map.addTilesetImage('straw2');
+		var dum1 = map.addTilesetImage('dum1');
+		var dum2 = map.addTilesetImage('dum2');
         
         // creating the layers
-        const bot = map.createStaticLayer('bot', tiles, 0, 0);
-        const top = map.createStaticLayer('top', tiles, 0, 0);
-        const Collision = map.createStaticLayer('Collision', tiles, 0, 0);
+        var bot = map.createStaticLayer('bot', tiles, 0, 0);
+        var top = map.createStaticLayer('top', tiles, straw1, straw2, dum1, dum2, 0, 0);
         
         // make all tiles in obstacles collidable
         top.setCollisionByExclusion([-1]);
@@ -108,7 +109,7 @@ const WorldScene = new Phaser.Class({
         this.player.setCollideWorldBounds(true);
         
         // don't walk on trees
-        this.physics.add.collider(this.player, obstacles);
+        this.physics.add.collider(this.player, top);
 
         // limit camera to map
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
@@ -118,15 +119,16 @@ const WorldScene = new Phaser.Class({
         // user input
         this.cursors = this.input.keyboard.createCursorKeys();
         
-        // where the enemies will be
+        /* where the enemies will be
         this.spawns = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
         for(var i = 0; i < 30; i++) {
-            const x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
-            const y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
+            var x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
+            var y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
             // parameters are x, y, width, height
             this.spawns.create(x, y, 20, 20);            
         }        
-        // add collider
+        */
+		//		add collider
         this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this);
 		
         // we listen for 'wake' event
