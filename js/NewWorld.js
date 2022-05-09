@@ -1,23 +1,6 @@
-const config = {
-  type: Phaser.AUTO,
-  width: 700,
-  height: 468,
-  backgroundColor: "b9eaff",
-  physics: {
-    default: 'arcade',
-    arcade: {
-      gravity: { y: 0 },
-      enableBody: true,
-    }
-  },
-  scene: [StartScene]
-};
- 
-const game = new Phaser.Game(config);
-
-class StartScene extends Phaser.Scene {
+class WorldScene extends Phaser.Scene {
 	constructor() {
-		super({ key: 'StartScene' })
+		super({ key: 'WorldScene' })
 	}
 
 	preload() {
