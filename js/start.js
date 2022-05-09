@@ -1,10 +1,8 @@
 var config = {
     type: Phaser.AUTO,
-    parent: 'content',
     width: 700,
     height: 468,
     zoom: 2,
-    pixelArt: true,
     physics: {
         default: 'arcade',
         arcade: {
