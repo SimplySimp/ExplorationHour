@@ -35,7 +35,6 @@ class WorldScene extends Phaser.Scene {
   } else {
     gameState.player.setVelocityX(0);
   }
-
 	}
-}
+		}
 	

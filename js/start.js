@@ -11,8 +11,6 @@ var config = {
     },
     scene: [
         WorldScene,
-        BattleScene,
-        UIScene
     ]
 };
 var game = new Phaser.Game(config);
